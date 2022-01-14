@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="nav nav_top">
+        <div class="logo">
+            <a href="index.html"><img src="logo.png.png" alt="1Stop" width="200px"></a>
+        </div>
+        <div class="nav_side">
+            <a href="about.html">About Us</a>
+            <a href="service.html">Services</a>
+            <a href="blog.html">Blogs</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="signin.html">Sign In</a>  
+            <a href="register.html">Register</a>                    <!-- if you leave href empty or '#' then it will stay there -->
+
+        </div>
+    </nav>
+
+    <div class="contact_container">
+        <h2>Contact Us</h2>
+        <div class="location">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.1274988816713!2d75.8696738149616!3d22.68629713512441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fde8566a3b65%3A0x5ce04a9c3b185ded!2sAtulya%20IT%20Park!5e0!3m2!1sen!2sin!4v1641730307135!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="contact_content">
+            <p><b>Address: Indore, India</b></p>
+            <p><b>Call: +91 7815646058</b></p>
+            <p><b>Mail: nishivitalkar171@gmail.com</b></p>
+            
+        </div>
+    </div>
+
+    <div class="feed">
+        <h2>Write a Review</h2>
+        <div class="feed_form">
+            <form name="submit-googlesheet" method="post">
+                <input type="text" name="Name" placeholder="Name"><br>
+                <input type="email" name="Email" placeholder="Email ID"><br>
+                <input type="number" name="Number" placeholder="Contact Number"><br>
+                <textarea rows="5" cols="7" name="Review" placeholder="Write your review"></textarea><br>
+                <button type="submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+    <footer>
+    <div class="logo">
+        <a href="index.html"><img src="logo.png.png" alt="1Stop" width="200px"></a>
+    </div>
+    <div class="pages">
+        <h3>Pages</h3>
+        <a href="">About Us</a>|
+        <a href="">Services</a>|
+        <a href="">Blogs</a>|
+        <a href="">Register</a>|
+        <a href="">Sign Up</a>|
+    </div>
+    <div class="doc">
+        <h3>Documents</h3>
+        <a href="">Privacy Policy</a>|
+        <a href="">Terms Of Use</a>|
+        <a href="">Return Policy</a>|
+    </div>
+    <div class="social">
+        <h3>Follow Us</h3>
+        <a href="https://twitter.com/" target="_black"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/" target="_black"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/" target="_black"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/" target="_black"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    </div>
+    <div class="contact">
+        <h3>Contact Us</h3>
+        <a href="mailto: nishivitalkar171@gmail.com" target="_black"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        <a href="https://api.Whatsapp.com/send?phone=919876543210"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="tel: +919876543210"><i class="fa fa-phone" aria-hidden="true"></i></a>
+    </div>
+    <hr>
+    <p>Copyright &copy; 2021 HandCrafted. All rights reserved</p>
+</footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>    
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>    
+<script type="text/javascript">
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyg1J-l9UeNMuNPXFY_o4uhpZoklZ-MwUDikd-ipgzH1aN4aTgK_vwEYLWlDzxQIYg/exec'
+    const form = document.forms['submit-googlesheet']
+
+    form.addEventListener('submit',e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting us...! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+    
+</body>
+</html>
